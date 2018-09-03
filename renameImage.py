@@ -1,7 +1,8 @@
+from os import remove
 from os import listdir
 from os.path import isfile, join
 import cv2
-path = "D:\\FOTO DATA SKRIPSI\\"
+path = "D:\\FOTO DATA SKRIPSI\\"  # path to folder data
 for folder in listdir(path):
     pathtofolder_eachImage = join(path, folder)
     idImage = [0, 0, 0, 0]
@@ -21,4 +22,5 @@ for folder in listdir(path):
         path_to_save = join(pathtofolder_eachImage, new_name)
         print(path_to_save)
         cv2.imwrite(path_to_save, img)
+        remove(path_to_image)
 cv2.destroyAllWindows()
